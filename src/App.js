@@ -1,22 +1,29 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+
+
 
 function App() {
   return (
     <div className="App">
-      <Person name="Adnan Hasan" ocupation="Job Holder"></Person>
-      <Person name="Masud Rana" ocupation="Programmer"></Person>
-      <Person name="Busra" ocupation="ai sala bou niye bastoi thake"></Person>
+      <LoadCountries></LoadCountries>
     </div>
   );
 }
 
+function LoadCountries(props) {
+  const [countries, setCountries] = useState([]);
+  useEffect(() => {
+    fetch('https://restcountries.com/v3.1/all')
+    .then(res => res.json())
+    .then(data => console.log(data))
+  }, [])
 
-function Person(props) {
   return (
-    <div className='person'>
-      <h2>{props.name}</h2>
-      <p>{props.ocupation}</p>
+    <div>
+      <h2>Visit Duniya Dari</h2>
+
+
     </div>
   )
 }
