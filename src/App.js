@@ -4,18 +4,19 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Person></Person>
+      <Person name="Adnan Hasan" ocupation="Job Holder"></Person>
+      <Person name="Masud Rana" ocupation="Programmer"></Person>
+      <Person name="Busra" ocupation="ai sala bou niye bastoi thake"></Person>
     </div>
   );
 }
 
 
-function Person() {
+function Person(props) {
   return (
     <div className='person'>
-      <h2>Adnan Hassan</h2>
-      <p>Ocupation: Job Holder</p>
-      <p>habit: coding</p>
+      <h2>{props.name}</h2>
+      <p>{props.ocupation}</p>
     </div>
   )
 }
